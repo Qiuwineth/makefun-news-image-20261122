@@ -463,7 +463,8 @@ def build():
 def main():
     cv = build()
     here = os.path.dirname(os.path.abspath(__file__))
-    save_png(cv, os.path.join(here, "entry.png"))
+    out_dir = os.environ.get("MAKEFUN_OUTPUT_DIR") or here
+    save_png(cv, os.path.join(out_dir, "entry.png"))
 
 
 if __name__ == "__main__":
